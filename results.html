@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+</head>
+<body>
+<h1><a href="/">Arizona Endangered Animals</a></h1>
+
+<p>      <% for(let i = 0; i < name.length; i++) { %>
+
+        <form action = "/details" method = "post" id = <%= i %>>
+            <label for=<%= i+1 %>><%= name[i]['speciesname'] %> View Details Here: </label>
+            <input id = <%= i %> class="submitButton1" type="submit" value= <%= name[i]['speciesid'] %> name = "Submit">
+            <br><br>
+        </form>
+        <% } %>
+</p>
+
+</body>
+</html>

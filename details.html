@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+</head>
+<body>
+<h1><a href="/">Arizona Endangered Animals</a></h1>
+    Name : <%= results["speciesname"] %> <br>
+    Class : <%= results["class"] %> <br>
+    Family : <%= results["family"] %> <br>
+    City : <%= results["city"] %> <br>
+    County : <%= results["county"] %> <br>
+    Habitat : <%= results["habitat"] %> <br>
+    Weather : <%= results["weather"] %> <br>
+    Size : <%= results["size"] %> <br>
+    Color : <%= results["color"] %> <br>
+    Weight : <%= results["weight"] %> <br>
+    Lifespan : <%= results["lifespan"] %> <br>
+    Endangered Level : <%= endangered %> <br>
+    Population : <%= results["population"] %> <br>
+    Date of Endangered : <%= results["dateofendager"] %> <br>
+    Eats : <br>
+    <% for(let i = 0; i < eat.length; i++) { %>
+    <p>            <%= eat[i] %> </p>
+    <% } %>
+    Eaten by : <br>
+    <% for(let i = 0; i < eaten.length; i++) { %>
+       <p>     <%= eaten[i] %></p>
+
+    <% } %>
+
+</body>
+</html>
