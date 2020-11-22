@@ -1,26 +1,18 @@
 const express = require('express')
-const path = require('path');
 const app = express()
-const router = express.Router();
-const window = require('window')
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
-
 const port = 3000
-
-var http = require('http');
-
-
 app.get("/", function (request, response){
     //show this file when the "/" is requested
-    response.sendFile(__dirname+"/views/home.html");
+    response.sendFile(__dirname+"/home.html");
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const {p} = require('./config/config')
+const {p} = require('./config')
 
 
 app.use(bodyParser.urlencoded({extended: true}))
@@ -39,7 +31,7 @@ const pool = new pg.Pool({
 
 
 const getBooks = (request, response) => {
-    var queryString = 'SELECT speciesName, species.speciesId FROM species, endangeredLevel, location WHERE species.speciesId = endangeredLevel.speciesId AND species.regionId = location.regionId '
+    var queryString = 'SELECT speciesName, species.speciesId FROM species, endangeredLevel, location, physicalDescription WHERE species.speciesId = endangeredLevel.speciesId AND species.regionId = location.regionId AND physicalDescription.speciesId = species.speciesId '
     var any = false
     if(request.body.fname != '' && request.body.fname != ' ')
     {
@@ -61,10 +53,30 @@ const getBooks = (request, response) => {
         any = true
         queryString = queryString + ' AND location.county =  \'' + request.body.county +'\''
     }
+    else if(request.body.class != '')
+    {
+        any = true
+        queryString = queryString + ' AND species.class =  \'' + request.body.class +'\''
+    }
+    else if(request.body.type != '')
+    {
+        any = true
+        queryString = queryString + ' AND species.family =  \'' + request.body.type +'\''
+    }
+    else if(request.body.maxW != '' && request.body.maxW != ' ')
+    {
+        any = true
+        queryString = queryString + ' AND physicalDescription.weight < ' + request.body.maxW
+    }
+    else if(request.body.minW != '' && request.body.minW != ' ')
+    {
+        any = true
+        queryString = queryString + ' AND physicalDescription.weight > ' + request.body.minW
+    }
     queryString = queryString + ';'
     if(!any)
     {
-        queryString = 'SELECT speciesName, speciesId FROM species;'
+        //queryString = 'SELECT speciesName, speciesId FROM species;'
     }
     pool.query(queryString , (error, results) => {
         if (error) {
@@ -72,7 +84,7 @@ const getBooks = (request, response) => {
         }
         //console.log(request.body.fname)
         //response.status(200).json(results.rows)
-        response.render(__dirname + "/views/results.html", {name:results.rows});
+        response.render(__dirname + "/results.html", {name:results.rows});
     })
     //response.sendFile(__dirname+"/views/results.html");
 
@@ -170,7 +182,7 @@ const getDetails = (request, response) => {
                     //console.log(request.body.fname)
                     //response.status(200).json(results.rows)
                     console.log(results3.rows)
-                    response.render(__dirname + "/views/details.html", {results:results3.rows[0], eat:eats, eaten:eatenBy, endangered: endangered});
+                    response.render(__dirname + "/details.html", {results:results3.rows[0], eat:eats, eaten:eatenBy, endangered: endangered});
                 })
             })
             //response.render(__dirname + "/views/details.html", {results:results3.rows[0]});

@@ -41,7 +41,7 @@ pool.query('DROP TABLE IF EXISTS eater;\n' +
     'speciesId smallint not null,\n' +
     'size text,\n' +
     'color text,\n' +
-    'weight text,\n' +
+    'weight decimal,\n' +
     'isPoisonous boolean,\n' +
     'isVenomous boolean,\n' +
     'lifeSpan int,\n' +
@@ -72,18 +72,18 @@ pool.query('DROP TABLE IF EXISTS eater;\n' +
     '(\'bird\',\'owl\',6,\'Mexican Spotted Owl\',2),'+
     '(\'fish\',\'fish\',7,\'Desert Pupfish\',13),'+
     '(\'bird\',\'vulture\',8,\'California Condor\',7),'+
-    '(\'mammal\',\'rodent\',9,\'New Mexico meadow jumping mouse\',16),'+
+    '(\'mammal\',\'rodent\',9,\'New Mexico Meadow Jumping Mouse\',16),'+
     '(\'fish\',\'fish\',10,\'Bonytail chub\',17),'+
-    '(\'mammal\',\'ungulate\',11,\'Sonoran pronghorn\',15),'+
-    '(\'mammal\',\'bat\',12,\'Lesser Long-Nosed bat\',18),'+
+    '(\'mammal\',\'ungulate\',11,\'Sonoran Pronghorn\',15),'+
+    '(\'mammal\',\'bat\',12,\'Lesser Long-Nosed Bat\',18),'+
     '(\'amphibian\',\'salamander\',13,\'Sonora Tiger Salamander\',19),'+
-    '(\'reptiles\',\'snake\',14,\'Narrow-headed gartersnake\',4),'+
+    '(\'reptiles\',\'snake\',14,\'Narrow-headed Gartersnake\',4),'+
     '(\'bird\',\'rail\',15,\'Yuma Clapper rail\',17),'+
-    '(\'reptile\',\'snake\',16,\'New Mexican Ridge-Nosed rattlesnake\',15),'+
-    '(\'mammal\',\'weasel\',17,\'black\sfootedvferret\',14),'+
+    '(\'reptile\',\'snake\',16,\'New Mexican Ridge-Nosed Rattlesnake\',15),'+
+    '(\'mammal\',\'weasel\',17,\'Black Footed Ferret\',14),'+
     '(\'mammal\',\'dog\',18,\'Black Footed Prairie Dog\',14),'+
     '(\'reptile\',\'tortoise\',19,\'Desert Tortoise\',20),'+
-    '(\amphiban\',\'frog\',20,\'Chiricahua leopard frog\',4);'
+    '(\'amphiban\',\'frog\',20,\'Chiricahua Leopard Frog\',4);'
     +
     // Location
     'INSERT INTO location VALUES(\'Tempe\',\'Maricopa\',\'Desert\',\'Dry\',2),' +
@@ -149,9 +149,10 @@ pool.query('DROP TABLE IF EXISTS eater;\n' +
     '(11,null,null),' +
     '(13,null,null),' +
     '(14,null,null),' +
-    '(15,null,null),'+     
+    '(15,null,null),'+
+    '(16,null,null),'+
     '(19,null,\'Grass\'),'+
-    '(20,null,null,null);'
+    '(20,null,null);'
     +
     //endangeredLevel
     'INSERT INTO endangeredlevel VALUES' +
