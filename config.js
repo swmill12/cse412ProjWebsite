@@ -119,9 +119,9 @@ pool.query('DROP TABLE IF EXISTS eater;\n' +
     '(9,\'Small\',\'Brown\',1,false,false,1),' +
     '(10,\'Medium\',\'Blue\',2,false,false,30),' +
     '(11,\'Large\',\'Brown\',120,false,false,11),' +
-    '(13,\'Small\',\'Grey\',NULL,false,false,NULL),' +
-    '(14,\'Medium\',\'Grey\',NULL,false,false,NULL),' +
-    '(15,\'Small\',\'Brown\',1,false,false,NULL),'+
+    '(13,\'Small\',\'Grey\',null,false,false,null),' +
+    '(14,\'Medium\',\'Grey\',null,false,false,null),' +
+    '(15,\'Small\',\'Brown\',1,false,false,null),'+
     '(19,\'Medium\',\'Brown\',15,false,false,50),'+
     '(20,\'Small\',\'Green\',1,false,false,18);'
     +
@@ -160,13 +160,13 @@ pool.query('DROP TABLE IF EXISTS eater;\n' +
     '(4,7,10,\'3-28-1972\'),' +
     '(5,7,5,\'3-28-1972\'),' +
     '(6,4,2000,\'3-16-1993\'),' +
-    '(7,5,NULL,\'3-31-1986\'),' +
+    '(7,5,null,\'3-31-1986\'),' +
     '(8,5,440,\'3-11-1967\'),' +
-    '(9,5,NULL,\'7-10-2014\'),' +
+    '(9,5,null,\'7-10-2014\'),' +
     '(10,5,500,\'2-05-2012\'),' +
-    '(11,5,NULL,\'3-11-1967\'),' +
+    '(11,5,null,\'3-11-1967\'),' +
     '(12,2,100000,\'3-23-2015\'),' +
-    '(13,5,NULL,\'1-06-1997\'),' +
+    '(13,5,null,\'1-06-1997\'),' +
     '(14,3,3500,\'7-08-2014\'),' +
     '(15,2,15000,\'10-01-2016\'),'+
     '(19,3,190000,\'7-01-1980\'),'+
