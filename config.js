@@ -83,7 +83,7 @@ pool.query('DROP TABLE IF EXISTS eater;\n' +
     '(\'mammal\',\'weasel\',17,\'Black Footed Ferret\',14),'+
     '(\'mammal\',\'dog\',18,\'Black Footed Prairie Dog\',14),'+
     '(\'reptile\',\'tortoise\',19,\'Desert Tortoise\',20),'+
-    '(\'amphiban\',\'frog\',20,\'Chiricahua Leopard Frog\',4);'
+    '(\'amphibian\',\'frog\',20,\'Chiricahua Leopard Frog\',4);'
     +
     // Location
     'INSERT INTO location VALUES(\'Tempe\',\'Maricopa\',\'Desert\',\'Dry\',2),' +

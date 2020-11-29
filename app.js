@@ -38,42 +38,46 @@ const getBooks = (request, response) => {
         any = true
         queryString = queryString + ' AND species.speciesName = \'' + request.body.fname +'\''
     }
-    else if(request.body.pop != '' && request.body.pop != ' ')
+    if(request.body.pop != '' && request.body.pop != ' ')
     {
         any = true
         queryString = queryString + ' AND endangeredLevel.population < ' + request.body.pop
     }
-    else if(request.body.city != '')
+    if(request.body.city != '')
     {
         any = true
         queryString = queryString + ' AND location.city =  \'' + request.body.city +'\''
     }
-    else if(request.body.county != '')
+    if(request.body.county != '0')
     {
         any = true
         queryString = queryString + ' AND location.county =  \'' + request.body.county +'\''
     }
-    else if(request.body.class != '')
+    if(request.body.class != '0')
     {
         any = true
         queryString = queryString + ' AND species.class =  \'' + request.body.class +'\''
     }
-    else if(request.body.type != '')
+    if(request.body.type != '')
     {
         any = true
         queryString = queryString + ' AND species.family =  \'' + request.body.type +'\''
     }
-    else if(request.body.maxW != '' && request.body.maxW != ' ')
+    if(request.body.maxW != '' && request.body.maxW != ' ')
     {
         any = true
         queryString = queryString + ' AND physicalDescription.weight < ' + request.body.maxW
     }
-    else if(request.body.minW != '' && request.body.minW != ' ')
+    if(request.body.minW != '' && request.body.minW != ' ')
     {
         any = true
         queryString = queryString + ' AND physicalDescription.weight > ' + request.body.minW
     }
-    queryString = queryString + ';'
+    if(request.body.end != '0')
+    {
+        queryString = queryString + ' AND endangeredLevel.level = ' + request.body.end
+    }
+    queryString = queryString + ' ORDER BY species.speciesName ASC;'
     if(!any)
     {
         //queryString = 'SELECT speciesName, speciesId FROM species;'
@@ -82,6 +86,9 @@ const getBooks = (request, response) => {
         if (error) {
             throw error
         }
+
+        // results.rows[i]['speciesname']
+
         //console.log(request.body.fname)
         //response.status(200).json(results.rows)
         response.render(__dirname + "/results.html", {name:results.rows});
