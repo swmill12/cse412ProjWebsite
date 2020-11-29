@@ -84,8 +84,8 @@ pool.query('DROP TABLE IF EXISTS eater;\n' +
     '(\'mammal\',\'dog\',18,\'Black Footed Prairie Dog\',14),'+
     '(\'reptile\',\'tortoise\',19,\'Desert Tortoise\',20),'+
     '(\'amphibian\',\'frog\',20,\'Chiricahua Leopard Frog\',4),'+
-	'(\'fish\',\'fish\',21,\'Apache Trout\',4),'+
-	'(\'fish\',\'fish\',22,\'Beautiful Shiner\',4);'
+    '(\'fish\',\'fish\',21,\'Apache Trout\',4),'+
+    '(\'fish\',\'fish\',22,\'Beautiful Shiner\',4);'
     +
     // Location
     'INSERT INTO location VALUES(\'Tempe\',\'Maricopa\',\'Desert\',\'Dry\',2),' +
@@ -126,8 +126,8 @@ pool.query('DROP TABLE IF EXISTS eater;\n' +
     '(15,\'Small\',\'Brown\',1,false,false,null),'+
     '(19,\'Medium\',\'Brown\',15,false,false,50),'+
     '(20,\'Small\',\'Green\',1,false,false,18),'+
-	'(21,\'Small\',\'Yellow\',1,false,false,4),'+
-	'(22,\'Small\',\'Orange\',1,false,false,3);'
+    '(21,\'Small\',\'Yellow\',1,false,false,4),'+
+    '(22,\'Small\',\'Orange\',1,false,false,3);'
     +
     //eater
     'INSERT INTO eater VALUES(9,null,\'Grass\'),' +
@@ -157,8 +157,8 @@ pool.query('DROP TABLE IF EXISTS eater;\n' +
     '(16,null,null),'+
     '(19,null,\'Grass\'),'+
     '(20,null,null),'+
-	'(21,null,null),'+
-	'(22,null,null);'
+    '(21,null,null),'+
+    '(22,null,null);'
     +
     //endangeredLevel
     'INSERT INTO endangeredlevel VALUES' +
@@ -177,8 +177,8 @@ pool.query('DROP TABLE IF EXISTS eater;\n' +
     '(15,2,15000,\'10-01-2016\'),'+
     '(19,3,190000,\'7-01-1980\'),'+
     '(20,3,10000,\'7-20-1998\'),'+
-	'(21,5,null,\'8-01-1996\'),'+
-	'(22,1,null,\'9-20-2018\');'
+    '(21,5,null,\'8-01-1996\'),'+
+    '(22,1,null,\'9-20-2018\');'
     
 
     , (err, res) => {
