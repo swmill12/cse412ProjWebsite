@@ -1,14 +1,28 @@
 <html>
-<head><title>Home</title></head>
+<style>
+    .content {
+        max-width: 500px;
+        margin: auto;
+    }
+</style>
 <body>
-<h1><a href="">Arizona Endangered Animals</a></h1>
-<p>Search for animals by name, population, city, or county.</p>
-<p>Leave blank to see all animals, or fill out any number of them</p>
+
+
+</body>
+<head><title>Home</title></head>
+<body style="background-color:darkblue;">
+
+<div class="content">
+
+<h1><a style = color:orange href="">Arizona Endangered Animals</a></h1>
+<h3><a style = color:orange href="/">Reset Filters</a></h3>
+<p style = color:yellow>Search for animals by name, population, city, or county.</p>
+<p style = color:yellow>Leave blank to see all animals, or fill out any number of them</p>
 <br>
 <form action = "/search" method = "post">
-    <label for="fname">Name</label>
+    <label style = color:red for="fname">Name</label>
     <input type="text" id="fname" name="fname"><br><br>
-    <label for="class">Class</label>
+    <label style = color:red for="class">Class</label>
     <select name="class" id="class">
         <option value="0">None Selected</option>
         <option value="mammal">Mammal</option>
@@ -17,13 +31,13 @@
         <option value="amphibian">Amphibian</option>
         <option value="Fish">Fish</option>
     </select><br><br>
-    <label for="type">Type (ex. snake, bat, etc)</label>
-    <input type="text" id="type" name="type"><br><br>
-    <label for="pop">Max Population</label>
+    <label style = color:red for="type">Type (ex. snake, bat, etc)</label>
+    <input  type="text" id="type" name="type"><br><br>
+    <label style = color:red for="pop">Max Population</label>
     <input type="text" id="pop" name="pop"><br><br>
-    <label for="city">City</label>
+    <label style = color:red for="city">City</label>
     <input type="text" id="city" name="city"><br><br>
-    <label for="county">County</label>
+    <label style = color:red for="county">County</label>
     <select name="county" id="county">
         <option value="0">None Selected</option>
         <option value="Maricopa">Maricopa</option>
@@ -36,11 +50,11 @@
         <option value="Santa Cruz">Santa Cruz</option>
         <option value="Mohave">Mohave</option>
     </select><br><br>
-    <label for="maxW">Max Weight</label>
+    <label style = color:red for="maxW">Max Weight</label>
     <input type="text" id="maxW" name="maxW"><br><br>
-    <label for="minW">Min Weight</label>
+    <label style = color:red for="minW">Min Weight</label>
     <input type="text" id="minW" name="minW"><br><br>
-    <label for="end">Endangered Level</label>
+    <label style = color:red for="end">Endangered Level</label>
     <select name="end" id="end">
         <option value="0">None Selected</option>
         <option value="1">Least Concern</option>
@@ -54,7 +68,6 @@
 
     <input class="submitButton" type="submit" value="Search">
 </form>
-<script>
-</script>
+</div>
 </body>
 </html>

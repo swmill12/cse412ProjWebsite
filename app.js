@@ -30,7 +30,7 @@ const pool = new pg.Pool({
 })
 
 
-const getBooks = (request, response) => {
+const getSearch = (request, response) => {
     var queryString = 'SELECT speciesName, species.speciesId FROM species, endangeredLevel, location, physicalDescription WHERE species.speciesId = endangeredLevel.speciesId AND species.regionId = location.regionId AND physicalDescription.speciesId = species.speciesId '
     var any = false
     if(request.body.fname != '' && request.body.fname != ' ')
@@ -203,7 +203,7 @@ const getDetails = (request, response) => {
 
 app
     .route('/search')
-    .post(getBooks)
+    .post(getSearch)
 app
     .route('/details')
     // GET endpoint

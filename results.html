@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    .content {
+        max-width: 500px;
+        margin: auto;
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <title>Results</title>
 </head>
-<body>
-<h1><a href="/">Arizona Endangered Animals</a></h1>
+<body style="background-color:darkblue;">
+<div class="content">
+<h1><a style = color:orange href="/">Arizona Endangered Animals</a></h1>
+<h3><a style = color:orange href="/">Return Home</a></h3>
 
-<p>      <% for(let i = 0; i < name.length; i++) { %>
+<p style="color:red">   <% for(let i = 0; i < name.length; i++) { %>
 
         <form action = "/details" method = "post" id = <%= i %>>
-            <label for=<%= i+1 %>><%= name[i]['speciesname'] %> View Details Here: </label>
+            <label style="color:red" for=<%= i+1 %>><%= name[i]['speciesname'] %> <p style = color:yellow>Details: </label>
             <input id = <%= i %> class="submitButton1" type="submit" value= <%= name[i]['speciesid'] %> name = "Submit">
-            <br><br>
+</p><br>
         </form>
         <% } %>
 <% if(name.length == 0) { %>
@@ -21,6 +29,6 @@ No Animals Found!
 <% } %>
 
 </p>
-
+</div>
 </body>
 </html>
