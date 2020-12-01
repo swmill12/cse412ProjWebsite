@@ -7,6 +7,14 @@ app.get("/", function (request, response){
     //show this file when the "/" is requested
     response.sendFile(__dirname+"/home.html");
 });
+app.get("/details", function (request, response){
+    //show home page for all get functions so user most navigate to home page
+    response.sendFile(__dirname+"/home.html");
+});
+app.get("/search", function (request, response){
+    //show home page for all get functions so user most navigate to home page
+    response.sendFile(__dirname+"/home.html");
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
